@@ -10,10 +10,14 @@ class IOCContainer {
 
   static async bindServer() {
     Server.buildServices(app)
+    Server.ignoreNextMiddlewares(true)
   }
 
   static async resolveDependencies() {
-    Server.loadServices(app, ['../main/controller/**/*.js', '../main/service/**/*.js',], __dirname)
+    Server.loadServices(app, '../main/service/**/*.js', __dirname)
+    console.debug("Resolve Service Dependencies")
+    Server.loadControllers(app, '../main/controller/**/*.js', __dirname)
+    console.debug("Resolve Controller Dependencies")
   }
 
 }

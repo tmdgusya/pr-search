@@ -1,12 +1,17 @@
 import {GET, Path,} from "typescript-rest";
+import {Inject,} from "typescript-ioc";
+import {HelloService,} from "../service/HelloService";
 
 @Path("/hello")
-class HelloService {
+class HelloController {
+
+  @Inject
+  private readonly helloService!: HelloService
 
   @Path("/me")
   @GET
   public hello(): string {
-    return "Hello";
+    return this.helloService.hello();
   }
 
 }

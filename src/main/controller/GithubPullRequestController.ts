@@ -1,5 +1,5 @@
 import {Inject,} from "typescript-ioc";
-import {GetPrByReviewedByMe,} from "../service/GetPrByReviewedByMe";
+import {GetPrByReviewedService,} from "../service/GetPrByReviewedService";
 import {GET, Param, Path,} from "typescript-rest";
 import {Assignee,} from "../adapter/GithubAdapter";
 
@@ -7,18 +7,18 @@ import {Assignee,} from "../adapter/GithubAdapter";
 class GithubPullRequestController {
 
   @Inject
-  private readonly getPrByReviewedByMe!: GetPrByReviewedByMe
+  private readonly getPrByReviewedService!: GetPrByReviewedService
 
   @Path("/by-me")
   @GET
-  async getPRReviewedByMe(
+  async getPR(
     @Param("isOpen") isOpen: boolean,
     @Param("reviewer") reviewer: string,
     @Param("org") org: string,
     @Param("repo") repo: string,
     @Param("branches") branches: string,
-  ): Promise<PRListOfReviewedByMeRespone[]> {
-    return await this.getPrByReviewedByMe.execute(
+  ): Promise<PRListOfReviewedByMeResponse[]> {
+    return await this.getPrByReviewedService.execute(
       isOpen,
       reviewer,
       org,
@@ -29,7 +29,7 @@ class GithubPullRequestController {
 
 }
 
-export class PRListOfReviewedByMeRespone {
+export class PRListOfReviewedByMeResponse {
 
   url: string
   assignee: string

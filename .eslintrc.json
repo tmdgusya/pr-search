@@ -14,8 +14,17 @@
   ],
   "rules": {
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", "always"],
-    "no-trailing-spaces": "error"
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "always"
+    ],
+    "no-trailing-spaces": "error",
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      {
+        "varsIgnorePattern": "Controller"
+      }
+    ]
   },
   "ignorePatterns": [
     "src/**/*.test.ts"

@@ -13,7 +13,7 @@ class IOCContainer {
   }
 
   static async resolveDependencies() {
-    Server.loadServices(app, ['../main/controller/**/*.js',], __dirname)
+    Server.loadServices(app, ['../main/controller/**/*.js', '../main/service/**/*.js',], __dirname)
   }
 
 }

@@ -25,11 +25,15 @@
     "test": "jest --config=jest.config.ts"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
+    "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "typescript-ioc": "^3.2.2",
     "typescript-rest": "^3.0.4",
     "typescript-rest-ioc": "^1.0.1"

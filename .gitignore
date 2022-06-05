@@ -1,5 +1,5 @@
 .idea
 node_modules
 yarn-error.log
-src/*/*.js
+src/**/*.js
 jest.config.js

@@ -51,3 +51,17 @@ curl localhost:3000/pr/by-me?isOpen=false&reviewer=tmdgusya&org=codesquad-member
   - Commit 앞에 Prefix 로 [#ISSUE_NUMBER] 를 붙여주세요.
   - 기능 명세에 대한 TEST 와 README 문서를 작성해주세요.
   - TEST 가 전부 통과하는지 확인해주세요
+
+### How to Create Issue
+
+- 일단 하고 싶은 일을 ISSUE 에 적어서 올려주세요
+- ISSUE 에 Assign 을 받으면 master 브랜치에서 ISSUE 에 알맞은 브랜치를 따서 작업해주세요
+- 작업후 커밋에는 반드시 [#ISSUE_NUMBER] 를 붙여주세요.
+- 반드시 master branch 와 rebase 를 부탁드려요 (커밋이 많다면 Squash 를 해서 올려주세요)
+- 기능 명세에 대한 TEST 와 README 문서를 작성해주세요.
+- TEST 가 전부 통과하는지 확인해주세요
+- Reviewer 를 Main Contributor 에게 지정해주세요.
+- 만약 브랜치가 머지됬다면 반드시 해당 ISSUE 로 가서 Done! 과 함께 PR 링크를 적어주세요
+
+예시 [PR ISSUE](https://github.com/tmdgusya/pr-search/pull/4)
+예시 [DONE PR](https://github.com/tmdgusya/pr-search/issues/3)

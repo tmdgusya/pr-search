@@ -1,15 +1,20 @@
-import axios from "axios";
+import {Inject,} from "typescript-ioc";
+import {ApiClient,} from "./Client/ApiClient";
 
 export class GithubAdapter {
+
+  @Inject
+  private readonly apiClient!: ApiClient
+
   async getPRListOfReviewedByMe(isOpen: boolean, reviewer: string, org: string, repo: string, branch: string): Promise<PullRequest[]> {
-    const {data,} = await axios
+    const {data,} = await this.apiClient
       .get<PullRequest[]>(`https://api.github.com/repos/${org}/${repo}/pulls`, {
         headers: {
           Accept: "application/vnd.github.v3+json",
         },
         params: {
           state: `${isOpen ? "open" : "closed"}`,
-          base: `${branch}`,
+          head: `${branch}`,
         },
       })
 

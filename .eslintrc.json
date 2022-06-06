@@ -24,6 +24,9 @@
       {
         "varsIgnorePattern": "Controller"
       }
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      0
     ]
   },
   "ignorePatterns": [

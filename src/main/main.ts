@@ -11,7 +11,7 @@ class IOCContainer {
 
   static async bindServer() {
     Server.buildServices(app)
-    Server.ignoreNextMiddlewares(true)
+    Server.ignoreNextMiddlewares(false)
   }
 
   static async resolveDependencies() {
